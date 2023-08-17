@@ -16,7 +16,7 @@ public extension SheetViewController {
             case let .gripSize(size):
                 self.gripSize = size
             case let .gripColor(color):
-                self.gripColor = UIColor(color)
+                self.gripColor = color.uiColor()
             case let .cornerCurve(cornerCurve):
                 self.cornerCurve = cornerCurve
             case let .cornerRadius(radius):
@@ -24,7 +24,7 @@ public extension SheetViewController {
             case let .minimumSpaceAbovePullBar(value):
                 self.minimumSpaceAbovePullBar = value
             case let .pullBarBackgroundColor(color):
-                self.pullBarBackgroundColor = UIColor(color)
+                self.pullBarBackgroundColor = color.uiColor()
             case let .treatPullBarAsClear(bool):
                 self.treatPullBarAsClear = bool
             case let .dismissOnOverlayTap(bool):
@@ -36,9 +36,9 @@ public extension SheetViewController {
             case let .autoAdjustToKeyboard(bool):
                 self.autoAdjustToKeyboard = bool
             case let .contentBackgroundColor(color):
-                self.contentBackgroundColor = UIColor(color)
+                self.contentBackgroundColor = color.uiColor()
             case let .overlayColor(color):
-                self.overlayColor = UIColor(color)
+                self.overlayColor = color.uiColor()
             }
         }
     }
