@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
-import FitttedSheets_SwiftUI
+import FittedSheetsSwiftUI
 
 struct ContentView: View {
     @State var showFittedSheet: Bool = false
+    let sheetConfiguration: SheetConfiguration = SheetConfiguration(
+        sizes: [.percent(0.5)],
+        options: nil,
+        sheetViewControllerOptinos: [],
+        shouldDismiss: nil,
+        didDismiss: nil)
     
     var body: some View {
         VStack {
@@ -19,7 +25,8 @@ struct ContentView: View {
                 Text("open sheet")
             }
         }
-        .fittedSheet(isPresented: $showFittedSheet) {
+        .fittedSheet(isPresented: $showFittedSheet,
+                     configuration: sheetConfiguration) {
             Text("opened")
         }
     }
