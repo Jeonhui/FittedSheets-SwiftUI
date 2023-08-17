@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A48EAD2A8E028200E9F2BD /* FittedSheetsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A5A48EAC2A8E028200E9F2BD /* FittedSheetsSwiftUI */; };
 		A5DD248A2A8DF27E00EF7364 /* FittedSheet_SwiftUI_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD24892A8DF27E00EF7364 /* FittedSheet_SwiftUI_ExampleApp.swift */; };
 		A5DD248C2A8DF27E00EF7364 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD248B2A8DF27E00EF7364 /* ContentView.swift */; };
 		A5DD248E2A8DF27F00EF7364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DD248D2A8DF27F00EF7364 /* Assets.xcassets */; };
 		A5DD24912A8DF27F00EF7364 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DD24902A8DF27F00EF7364 /* Preview Assets.xcassets */; };
-		A5DD24992A8DF29E00EF7364 /* FitttedSheets-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A5DD24982A8DF29E00EF7364 /* FitttedSheets-SwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5DD24992A8DF29E00EF7364 /* FitttedSheets-SwiftUI in Frameworks */,
+				A5A48EAD2A8E028200E9F2BD /* FittedSheetsSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 			);
 			name = "FittedSheet-SwiftUI-Example";
 			packageProductDependencies = (
-				A5DD24982A8DF29E00EF7364 /* FitttedSheets-SwiftUI */,
+				A5A48EAC2A8E028200E9F2BD /* FittedSheetsSwiftUI */,
 			);
 			productName = "FittedSheet-SwiftUI-Example";
 			productReference = A5DD24862A8DF27E00EF7364 /* FittedSheet-SwiftUI-Example.app */;
@@ -117,7 +117,7 @@
 			);
 			mainGroup = A5DD247D2A8DF27E00EF7364;
 			packageReferences = (
-				A5DD24972A8DF29E00EF7364 /* XCRemoteSwiftPackageReference "FitttedSheets-SwiftUI" */,
+				A5A48EAB2A8E028200E9F2BD /* XCRemoteSwiftPackageReference "FitttedSheets-SwiftUI" */,
 			);
 			productRefGroup = A5DD24872A8DF27E00EF7364 /* Products */;
 			projectDirPath = "";
@@ -349,21 +349,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A5DD24972A8DF29E00EF7364 /* XCRemoteSwiftPackageReference "FitttedSheets-SwiftUI" */ = {
+		A5A48EAB2A8E028200E9F2BD /* XCRemoteSwiftPackageReference "FitttedSheets-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Jeonhui/FitttedSheets-SwiftUI";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A5DD24982A8DF29E00EF7364 /* FitttedSheets-SwiftUI */ = {
+		A5A48EAC2A8E028200E9F2BD /* FittedSheetsSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A5DD24972A8DF29E00EF7364 /* XCRemoteSwiftPackageReference "FitttedSheets-SwiftUI" */;
-			productName = "FitttedSheets-SwiftUI";
+			package = A5A48EAB2A8E028200E9F2BD /* XCRemoteSwiftPackageReference "FitttedSheets-SwiftUI" */;
+			productName = FittedSheetsSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

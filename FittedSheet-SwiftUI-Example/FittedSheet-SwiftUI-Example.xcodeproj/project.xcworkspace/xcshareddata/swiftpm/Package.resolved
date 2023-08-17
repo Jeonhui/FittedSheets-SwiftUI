@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Jeonhui/FitttedSheets-SwiftUI",
       "state" : {
-        "branch" : "main",
-        "revision" : "947237f371a52406fa83d45ace03206906b41383"
+        "revision" : "c242a6d2f3e2ec30b62c5b6076caac8852cd389a",
+        "version" : "1.0.0"
       }
     }
   ],
