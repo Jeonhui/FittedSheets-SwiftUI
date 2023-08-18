@@ -76,10 +76,10 @@ public enum SheetViewControllerOptions {
 ## Swift Package Manager
 
 - File > Swift Packages > Add Package Dependency
-- Add https://github.com/Jeonhui/FitttedSheets-SwiftUI
+- Add https://github.com/Jeonhui/FittedSheets-SwiftUI
 
 ```asm
-https://github.com/Jeonhui/FitttedSheets-SwiftUI
+https://github.com/Jeonhui/FittedSheets-SwiftUI
 ```
 
 ## License
