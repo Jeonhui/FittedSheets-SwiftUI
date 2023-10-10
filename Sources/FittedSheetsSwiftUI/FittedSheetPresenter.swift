@@ -39,11 +39,10 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
 
             sheetController.didDismiss = { sheetViewController in
                 configuration.didDismiss?(sheetViewController)
+                isPresented = false
             }
 
-            uiViewController.present(sheetController, animated: false) {
-                self.isPresented.toggle()
-            }
+            uiViewController.present(sheetController, animated: false)
         }else{
             uiViewController.presentedViewController?.dismiss(animated: true)
         }
