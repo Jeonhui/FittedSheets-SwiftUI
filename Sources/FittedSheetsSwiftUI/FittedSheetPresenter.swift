@@ -44,6 +44,8 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
             uiViewController.present(sheetController, animated: false) {
                 self.isPresented.toggle()
             }
+        }else{
+            uiViewController.presentedViewController?.dismiss(animated: true)
         }
     }
 }
