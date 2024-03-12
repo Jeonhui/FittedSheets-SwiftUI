@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gordontucker/FittedSheets",
       "state" : {
-        "revision" : "3dcebb20ff42f644e9474a198acb886d4bd51793",
-        "version" : "2.5.3"
+        "revision" : "5d7f5a6307ad510aa05de5a4a16ac40846d3b2d3",
+        "version" : "2.6.1"
       }
     }
   ],

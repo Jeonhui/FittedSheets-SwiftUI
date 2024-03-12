@@ -11,23 +11,31 @@ import FittedSheetsSwiftUI
 struct ContentView: View {
     @State var showFittedSheet: Bool = false
     let sheetConfiguration: SheetConfiguration = SheetConfiguration(
-        sizes: [.percent(0.5)],
+        sizes: [.fullscreen],
         options: nil,
         sheetViewControllerOptinos: [],
         shouldDismiss: nil,
         didDismiss: nil)
     
     var body: some View {
-        VStack {
-            Button {
-                showFittedSheet.toggle()
-            } label: {
-                Text("open sheet")
+        NavigationView {
+            VStack {
+                NavigationLink {
+                    InlineContentView()
+                } label: {
+                    Text("Inline Mode Test")
+                }
+
+                Button {
+                    showFittedSheet.toggle()
+                } label: {
+                    Text("sheet button")
+                }
             }
         }
         .fittedSheet(isPresented: $showFittedSheet,
                      configuration: sheetConfiguration) {
-            Text("opened")
+            Text("new Sheets")
         }
     }
 }
