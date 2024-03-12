@@ -19,6 +19,13 @@ public extension View {
                                                         configuration: configuration,
                                                         destination: sheetView(),
                                                         animated: animated)
-        return self.background(fittedSheetPresenter)
+        
+        return ZStack {
+            self
+            Color.clear
+                .background(fittedSheetPresenter)
+                .zIndex(isPresented.wrappedValue ? 1 : -1)
+        }
+        
     }
 }

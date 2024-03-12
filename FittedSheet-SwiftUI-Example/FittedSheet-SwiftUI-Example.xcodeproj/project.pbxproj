@@ -13,6 +13,7 @@
 		A5DD248C2A8DF27E00EF7364 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD248B2A8DF27E00EF7364 /* ContentView.swift */; };
 		A5DD248E2A8DF27F00EF7364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DD248D2A8DF27F00EF7364 /* Assets.xcassets */; };
 		A5DD24912A8DF27F00EF7364 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DD24902A8DF27F00EF7364 /* Preview Assets.xcassets */; };
+		A5FA3CCD2BA0C1B9001AE190 /* SecondInlineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA3CCC2BA0C1B9001AE190 /* SecondInlineContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A5DD248B2A8DF27E00EF7364 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5DD248D2A8DF27F00EF7364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5DD24902A8DF27F00EF7364 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A5FA3CCC2BA0C1B9001AE190 /* SecondInlineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInlineContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				A59174742BA0A41B00ECD2BD /* InlineContentView.swift */,
 				A5DD248D2A8DF27F00EF7364 /* Assets.xcassets */,
 				A5DD248F2A8DF27F00EF7364 /* Preview Content */,
+				A5FA3CCC2BA0C1B9001AE190 /* SecondInlineContentView.swift */,
 			);
 			path = "FittedSheet-SwiftUI-Example";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DD248C2A8DF27E00EF7364 /* ContentView.swift in Sources */,
+				A5FA3CCD2BA0C1B9001AE190 /* SecondInlineContentView.swift in Sources */,
 				A5DD248A2A8DF27E00EF7364 /* FittedSheet_SwiftUI_ExampleApp.swift in Sources */,
 				A59174752BA0A41B00ECD2BD /* InlineContentView.swift in Sources */,
 			);
