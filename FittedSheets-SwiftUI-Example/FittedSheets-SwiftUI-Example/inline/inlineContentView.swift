@@ -1,8 +1,8 @@
 //
-//  InlineContentView.swift
-//  FittedSheet-SwiftUI-Example
+//  inlineContentView.swift
+//  FittedSheets-SwiftUI-Example
 //
-//  Created by 이전희 on 3/12/24.
+//  Created by 이전희 on 5/16/24.
 //
 
 import SwiftUI
@@ -20,7 +20,6 @@ struct InlineContentView: View {
         sheetViewControllerOptinos: [],
         shouldDismiss: nil,
         didDismiss: nil)
-    
     
     var body: some View {
         VStack {

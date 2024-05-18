@@ -1,8 +1,8 @@
 //
 //  SecondInlineContentView.swift
-//  FittedSheet-SwiftUI-Example
+//  FittedSheets-SwiftUI-Example
 //
-//  Created by 이전희 on 3/13/24.
+//  Created by 이전희 on 5/16/24.
 //
 
 import SwiftUI
@@ -11,7 +11,8 @@ import FittedSheetsSwiftUI
 
 struct SecondInlineContentView: View {
     @State var showSheet: Bool = false
-    let sheetConfiguration: SheetConfiguration = .init(sizes: [.intrinsic, .fullscreen], options: .init(useInlineMode: true))
+    let sheetConfiguration: SheetConfiguration = .init(sizes: [.intrinsic, .fullscreen],
+                                                       options: .init(useInlineMode: true))
     
     let values: [Int] = Array(Range(0...100))
     var body: some View {
@@ -38,8 +39,4 @@ struct SecondInlineContentView: View {
         }
         .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
