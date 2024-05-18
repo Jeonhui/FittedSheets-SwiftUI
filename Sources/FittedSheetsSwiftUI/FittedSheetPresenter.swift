@@ -34,10 +34,10 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
     
     public func updateUIViewController(_ uiViewController: UIViewController,
                                        context: Context) {
-        let controller = UIHostingController(rootView: destination)
+        let controller = SheetHostingController(rootView: destination)
         let sheetController = SheetViewController(controller: controller,
                                                   options: configuration.options)
-        sheetController.view.clipsToBounds = true
+        controller.sheetController = sheetController
         
         sheetController.setSizes(configuration.sizes, animated: true)
         sheetController.sheetViewControllerOptionsSetting(configuration.sheetViewControllerOptions)

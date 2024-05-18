@@ -13,7 +13,7 @@ struct MainView: View {
     private let sheetSizes: [SheetSize] = SheetSize.allCases
     @State private var selectedSheetSizeDict: [SheetSize: Bool] = [.intrinsic: true]
     @State var useInlineMode: Bool = false
-    @State var contentChange: Bool = false
+    @State var useContentHeightChange: Bool = false
     
     private var sheetConfiguration: SheetConfiguration {
         let selectedSheetSize = Array(selectedSheetSizeDict.filter { $0.value }.keys)
@@ -24,26 +24,28 @@ struct MainView: View {
     @State var showFittedSheet: Bool = false
     @State var showFittedSheetWithInlineMode: Bool = false
     
+    
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 List {
                     sizeList
                     optionList
                     etcList
                 }
                 .animation(.linear(duration: 0.2), value: useInlineMode)
-                showSheetButton
+                showSheetView
             }
             .selectionDisabled(false)
             .navigationTitle("Example")
             .navigationBarTitleDisplayMode(.inline)
-            
+            .ignoresSafeArea(edges: .bottom)
+            .background(.blue)
         }
-        // .fittedSheet(isPresented: $showFittedSheet,
-        //              configuration: sheetConfiguration) {
-        //     SheetContentView()
-        // }
+        .fittedSheet(isPresented: $showFittedSheet,
+                     configuration: sheetConfiguration) {
+            SheetContentView($useContentHeightChange)
+        }
     }
     
     private var sizeList: some View {
@@ -82,11 +84,11 @@ struct MainView: View {
     
     private var etcList: some View {
         Section(header: Text("Etc")) {
-            selectButton(text: "Content Change",
+            selectButton(text: "Content Height Change",
                          action: {
-                contentChange.toggle()
+                useContentHeightChange.toggle()
             },
-                         checked: contentChange)
+                         checked: useContentHeightChange)
         }
     }
     
@@ -103,7 +105,7 @@ struct MainView: View {
         .background(Color.gray.opacity(0.4))
         .fittedSheet(isPresented: $showFittedSheetWithInlineMode,
                      configuration: sheetConfiguration) {
-            SheetContentView()
+            SheetContentView($useContentHeightChange)
         }
     }
     
@@ -126,22 +128,31 @@ struct MainView: View {
         .animation(.linear(duration: 0.2), value: checked)
     }
     
-    private var showSheetButton: some View {
-        Button {
-            if useInlineMode {
-                showFittedSheetWithInlineMode.toggle()
-            } else {
-                showFittedSheet.toggle()
+    private var showSheetView: some View {
+        VStack {
+            Button {
+                if useInlineMode {
+                    showFittedSheetWithInlineMode.toggle()
+                } else {
+                    showFittedSheet.toggle()
+                }
+            } label: {
+                HStack{
+                    Spacer()
+                    Text("show sheet")
+                    Spacer()
+                }
+                .fontWeight(.bold)
+                .padding(.vertical)
+                .foregroundColor(.white)
+                .background(.cyan)
+                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 4, height: 4)))
+                .padding()
             }
-        } label: {
-            HStack{
-                Spacer()
-                Text("show sheet")
-                Spacer()
-            }
-            .padding(.vertical)
+            .buttonStyle(DefaultButtonStyle())
         }
-        .buttonStyle(DefaultButtonStyle())
+        .padding(.bottom, 40)
+        .background(Color.white.shadow(color: .gray.opacity(0.4), radius: 8, y: -2))
     }
 }
 
