@@ -32,7 +32,8 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
         return UIViewController()
     }
     
-    public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    public func updateUIViewController(_ uiViewController: UIViewController,
+                                       context: Context) {
         let controller = UIHostingController(rootView: destination)
         let sheetController = SheetViewController(controller: controller,
                                                   options: configuration.options)
@@ -60,9 +61,17 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
                                         useInlineMode: Bool) {
         if useInlineMode {
             if isPresented {
-                sheetController.allowGestureThroughOverlay = true
-                sheetController.animateIn(to: viewController.view,
-                                          in: viewController)
+                DispatchQueue.main.async {
+                    sheetController.animateIn(to: viewController.view,
+                                              in: viewController)
+                }
+            } else {
+                viewController.children.forEach { childViewController in
+                    guard let svc = childViewController as? SheetViewController else { return }
+                    DispatchQueue.main.async {
+                        svc.animateOut()
+                    }
+                }
             }
         } else {
             if isPresented {
