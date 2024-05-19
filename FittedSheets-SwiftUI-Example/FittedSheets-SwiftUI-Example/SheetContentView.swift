@@ -13,7 +13,7 @@ struct SheetContentView: View {
     @Binding var useContentHeightChange: Bool
     @State var isHigherHeightContentView: Bool = false
     
-    init(_ useContentHeightChange: Binding<Bool>) {
+    init(_ useContentHeightChange: Binding<Bool> = .constant(false)) {
         self._useContentHeightChange = useContentHeightChange
     }
     
@@ -22,21 +22,37 @@ struct SheetContentView: View {
             Text("Sheet Content View")
             
             if useContentHeightChange {
-                Button {
-                    isHigherHeightContentView.toggle()
-                } label: {
-                    HStack {
-                        Spacer()
-                        Text("Content Height Change")
-                        Spacer()
+                if !isHigherHeightContentView {
+                    Button {
+                        isHigherHeightContentView.toggle()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Content Height Change")
+                            Spacer()
+                        }
+                        .padding(.vertical)
+                        .foregroundColor(.white)
+                        .background(.cyan)
+                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 4, height: 4)))
+                        .padding()
                     }
-                    .padding(.vertical)
-                    .foregroundColor(.white)
-                    .background(.cyan)
-                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 4, height: 4)))
-                    .padding()
-                    .padding(.vertical, isHigherHeightContentView ? 40 : 0)
-    
+                } else {
+                    Button {
+                        isHigherHeightContentView.toggle()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Content Height Change")
+                            Spacer()
+                        }
+                        .padding(.vertical)
+                        .foregroundColor(.white)
+                        .background(.cyan)
+                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 4, height: 4)))
+                        .padding()
+                        .padding(.vertical, 40)
+                    }
                 }
             }
             HStack {

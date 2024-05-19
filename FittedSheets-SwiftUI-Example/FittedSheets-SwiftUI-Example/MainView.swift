@@ -29,6 +29,7 @@ struct MainView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 List {
+                    defaultList
                     sizeList
                     optionList
                     etcList
@@ -45,6 +46,21 @@ struct MainView: View {
         .fittedSheet(isPresented: $showFittedSheet,
                      configuration: sheetConfiguration) {
             SheetContentView($useContentHeightChange)
+        }
+    }
+    
+    private var defaultList: some View {
+        Section(header: Text("Code Example")) { 
+            NavigationLink {
+                SimpleSettingExampleView()
+            } label: {
+                Text("Simple Settings Example")
+            }
+            NavigationLink {
+                DetailSettingExampleView()
+            } label: {
+                Text("Detail Settings Example")
+            }
         }
     }
     

@@ -26,6 +26,24 @@ public extension View {
                 .background(fittedSheetPresenter)
                 .zIndex(isPresented.wrappedValue ? 1 : -1)
         }
+    }
+    
+    func fittedSheet<SheetView: View>(isPresented: Binding<Bool>,
+                                      sizes: [SheetSize] = [.intrinsic],
+                                      useInlineMode: Bool = false,
+                                      @ViewBuilder sheetView: @escaping () -> SheetView,
+                                      animated: Bool = true,
+                                      shouldDismiss: ((SheetViewController) -> Void)? = nil,
+                                      didDismiss: ((SheetViewController) -> Void)? = nil) -> some View {
+        let configuration = SheetConfiguration(sizes: sizes,
+                                               options: .init(useInlineMode: useInlineMode),
+                                               sheetViewControllerOptinos: [],
+                                               shouldDismiss: shouldDismiss,
+                                               didDismiss: didDismiss)
         
+        return fittedSheet(isPresented: isPresented,
+                           configuration: configuration,
+                           sheetView: sheetView,
+                           animated: animated)
     }
 }
