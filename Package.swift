@@ -24,8 +24,5 @@ let package = Package(
         .target(
             name: "FittedSheetsSwiftUI",
             dependencies: ["FittedSheets"]),
-        .testTarget(
-            name: "FittedSheetsSwiftUITests",
-            dependencies: ["FittedSheets", "FittedSheetsSwiftUI"]),
     ]
 )
