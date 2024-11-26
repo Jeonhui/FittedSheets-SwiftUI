@@ -59,25 +59,33 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
     private func presentSheetController(_ sheetController: SheetViewController,
                                         parent viewController: UIViewController,
                                         useInlineMode: Bool) {
-        if useInlineMode {
-            if isPresented {
-                DispatchQueue.main.async {
-                    sheetController.animateIn(to: viewController.view,
-                                              in: viewController)
-                }
-            } else {
-                viewController.children.forEach { childViewController in
-                    guard let svc = childViewController as? SheetViewController else { return }
-                    DispatchQueue.main.async {
-                        svc.animateOut()
-                    }
-                }
+        guard !useInlineMode else {
+            useInlineModePresentSheetController(sheetController, parent: viewController)
+            return
+        }
+        if isPresented {
+            viewController.present(sheetController, animated: animated)
+        } else {
+            viewController.presentedViewController?.dismiss(animated: animated)
+        }
+    }
+    
+    private func useInlineModePresentSheetController(_ sheetController: SheetViewController,
+                                                     parent viewController: UIViewController) {
+        guard !viewController.children.contains(where: { $0 is SheetViewController }) else {
+            return
+        }
+        if isPresented {
+            DispatchQueue.main.async {
+                sheetController.animateIn(to: viewController.view,
+                                          in: viewController)
             }
         } else {
-            if isPresented {
-                viewController.present(sheetController, animated: animated)
-            } else {
-                viewController.presentedViewController?.dismiss(animated: animated)
+            viewController.children.forEach { childViewController in
+                guard let svc = childViewController as? SheetViewController else { return }
+                DispatchQueue.main.async {
+                    svc.animateOut()
+                }
             }
         }
     }

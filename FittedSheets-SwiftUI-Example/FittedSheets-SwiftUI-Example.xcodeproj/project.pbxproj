@@ -14,9 +14,9 @@
 		A567AB362BF5B09100819941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567AB352BF5B09100819941 /* Assets.xcassets */; };
 		A567AB392BF5B09100819941 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567AB382BF5B09100819941 /* Preview Assets.xcassets */; };
 		A567AB4C2BF5B17F00819941 /* SheetSize+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567AB4B2BF5B17F00819941 /* SheetSize+.swift */; };
-		A567AB4E2BF5B2D100819941 /* FittedSheetsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A567AB4D2BF5B2D100819941 /* FittedSheetsSwiftUI */; };
 		A567AB502BF5B72100819941 /* SheetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567AB4F2BF5B72100819941 /* SheetContentView.swift */; };
 		A567AB522BF5B78F00819941 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567AB512BF5B78F00819941 /* ExampleView.swift */; };
+		A590401F2CF58D5A00E55C1A /* FittedSheetsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A590401E2CF58D5A00E55C1A /* FittedSheetsSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +31,7 @@
 		A567AB4B2BF5B17F00819941 /* SheetSize+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SheetSize+.swift"; sourceTree = "<group>"; };
 		A567AB4F2BF5B72100819941 /* SheetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetContentView.swift; sourceTree = "<group>"; };
 		A567AB512BF5B78F00819941 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		A5E91AD32CF58C970091B944 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567AB4E2BF5B2D100819941 /* FittedSheetsSwiftUI in Frameworks */,
+				A590401F2CF58D5A00E55C1A /* FittedSheetsSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +106,7 @@
 		A567AB3F2BF5B0A900819941 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5E91AD32CF58C970091B944 /* Package.swift */,
 				A567AB402BF5B0A900819941 /* FitttedSheets-SwiftUI */,
 			);
 			name = Frameworks;
@@ -135,7 +137,7 @@
 			);
 			name = "FittedSheets-SwiftUI-Example";
 			packageProductDependencies = (
-				A567AB4D2BF5B2D100819941 /* FittedSheetsSwiftUI */,
+				A590401E2CF58D5A00E55C1A /* FittedSheetsSwiftUI */,
 			);
 			productName = "FittedSheets-SwiftUI-Example";
 			productReference = A567AB2E2BF5B09000819941 /* FittedSheets-SwiftUI-Example.app */;
@@ -405,7 +407,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A567AB4D2BF5B2D100819941 /* FittedSheetsSwiftUI */ = {
+		A590401E2CF58D5A00E55C1A /* FittedSheetsSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FittedSheetsSwiftUI;
 		};
