@@ -161,14 +161,14 @@ struct MainView: View {
                 .fontWeight(.bold)
                 .padding(.vertical)
                 .foregroundColor(.white)
-                .background(.cyan)
+                .background(.button)
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 4, height: 4)))
                 .padding()
             }
             .buttonStyle(DefaultButtonStyle())
         }
         .padding(.bottom, 40)
-        .background(Color.white.shadow(color: .gray.opacity(0.4), radius: 8, y: -2))
+        .background(Color.background.shadow(color: .shadow, radius: 8, y: -2))
     }
 }
 

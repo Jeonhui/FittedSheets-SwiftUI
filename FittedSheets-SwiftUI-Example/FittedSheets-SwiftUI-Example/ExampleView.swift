@@ -29,7 +29,6 @@ struct ExampleView: View {
                     .background(Color.accentColor)
                     .cornerRadius(10)
             }
-           
         }
         .navigationTitle("\(self.sheetSize)")
     }
