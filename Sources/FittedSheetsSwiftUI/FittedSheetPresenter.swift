@@ -13,7 +13,6 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
     private var destination: SheetView
     let configuration: SheetConfiguration
     let animated: Bool
-    private var parent: UIViewController
     private(set) var sheetViewController: SheetViewController? = nil
     
     init(_ parent: some View,
@@ -21,7 +20,6 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
          configuration: SheetConfiguration,
          destination: SheetView,
          animated: Bool) {
-        self.parent = UIHostingController(rootView: parent)
         self._isPresented = isPresented
         self.configuration = configuration
         self.destination = destination
@@ -29,6 +27,7 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
     }
     
     public func makeUIViewController(context: Context) -> UIViewController {
+        print("xxxxxxx")
         return UIViewController()
     }
     
@@ -51,6 +50,7 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
             configuration.didDismiss?(sheetViewController)
             isPresented = false
         }
+        
         presentSheetController(sheetController,
                                parent: uiViewController,
                                useInlineMode: configuration.options?.useInlineMode ?? false)
@@ -60,7 +60,8 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
                                         parent viewController: UIViewController,
                                         useInlineMode: Bool) {
         guard !useInlineMode else {
-            useInlineModePresentSheetController(sheetController, parent: viewController)
+            useInlineModePresentSheetController(sheetController,
+                                                parent: viewController)
             return
         }
         if isPresented {
@@ -72,10 +73,12 @@ public struct FittedSheetPresenter<SheetView: View>: UIViewControllerRepresentab
     
     private func useInlineModePresentSheetController(_ sheetController: SheetViewController,
                                                      parent viewController: UIViewController) {
-        guard !viewController.children.contains(where: { $0 is SheetViewController }) else {
-            return
-        }
         if isPresented {
+            guard !viewController
+                .children
+                .contains(where: { $0 is SheetViewController }) else {
+                return
+            }
             DispatchQueue.main.async {
                 sheetController.animateIn(to: viewController.view,
                                           in: viewController)
